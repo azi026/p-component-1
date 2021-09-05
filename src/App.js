@@ -56,7 +56,7 @@ class App extends Component{
         this.setState({counters})
     }
     handelSum=()=>{
-        const sum=this.state.counters.reduce((a,c)=>{
+        this.state.counters.reduce((a,c)=>{
             return a+c.value;
            
         },0);    

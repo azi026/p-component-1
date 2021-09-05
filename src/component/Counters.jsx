@@ -7,7 +7,7 @@ class Counters extends React.Component {
         
         return (
             <div>                      
-                <img  style={{marginBottom:5,borderRadius:10}} src={this.props.url} />
+                <img  style={{marginBottom:5,borderRadius:10}} src={this.props.url } alt={this.props.alt}/>
                 <span className={this.getClasses()} >{this.formatCount()} </span>             
                 <button onClick={()=>this.props.onIncrement(this.props.counter)}
                  className="btn btn-secondary btn-sm m-2">+</button>

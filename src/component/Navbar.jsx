@@ -4,7 +4,7 @@ const NavBar = props =>{
     
     return(
         <nav className="navbar navbar-light bg-light">
-        <a className="navbar-brand" href="#">{""}
+        <a className="navbar-brand" href="http://google.com">{""}
         <span className="primary" >{props.totalCounters}</span>
         </a>
         
