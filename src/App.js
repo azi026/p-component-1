@@ -12,7 +12,7 @@ class App extends Component{
     render(){
         return(
            <div>
-              <NavBar totalCounters={this.state.counters.filter(c=>c.value>0).length}sum={this.state.counters.reduce((a,c)=>a+c.value,0)}  /> 
+              <NavBar totalCounters={this.state.counters.filter(c=>c.value>0).length}sum={this.state.counters.reduce((a,c)=>a+c.value,0)}totalCounters={this.state.counters.filter(c=> c.value >0).length}  /> 
               <button onClick={this.handelReset} className="btn btn-primary m-2"> Reset</button>                 
               <main className="container">              
                     {this.state.counters.map(counter=>
