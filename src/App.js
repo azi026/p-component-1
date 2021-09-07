@@ -5,13 +5,14 @@ class App extends Component{
     state={
         counters:[{id:1,value:4,img:{url:"https://picsum.photos/200",alt:"dd"}}
         ,{id:2,value:0,img:{url:"https://picsum.photos/201"},alt:"dd"},
-        {id:3,value:0,img:{url:"https://picsum.photos/205",alt:"s"}}]
+        {id:3,value:0,img:{url:"https://picsum.photos/205",alt:"s"}}],
+        
     };
         
     render(){
         return(
            <div>
-              <NavBar totalCounters={this.state.counters.filter(c=>c.value>0).length}  onSum={this.handelSum}/> 
+              <NavBar totalCounters={this.state.counters.filter(c=>c.value>0).length}sum={this.state.counters.reduce((a,c)=>a+c.value,0)}  /> 
               <button onClick={this.handelReset} className="btn btn-primary m-2"> Reset</button>                 
               <main className="container">              
                     {this.state.counters.map(counter=>
@@ -21,6 +22,7 @@ class App extends Component{
                         onIncrement={this.handelIncrement}
                         onDecrement={this.handelDecrement}
                         onDelete={this.handelDelet}
+                      
                        
                         
                         />                 
@@ -55,14 +57,15 @@ class App extends Component{
         })
         this.setState({counters})
     }
-    handelSum=()=>{
-        this.state.counters.reduce((a,c)=>{
-            return a+c.value;
+    // handelSum=()=>{
+    //     this.state.counters.reduce((a,c)=>{
+    //         const sum= a+c.value;
+            
            
-        },0);    
+    //     });    
       
         
-    }
+    // }
     
 
 }
